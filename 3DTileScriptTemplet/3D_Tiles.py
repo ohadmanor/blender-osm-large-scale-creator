@@ -49,11 +49,11 @@ def ImportOSM():
     bpy.context.scene.blosm.osmSource = 'server'
     bpy.context.scene.blosm.terrainObject = "Terrain"
     bpy.context.scene.blosm.mode = '3Drealistic'
-    bpy.context.scene.blosm.assetPackage = 'defult'
+    bpy.context.scene.blosm.assetPackage = 'ISR_Buildings_2'
     bpy.context.scene.blosm.importForExport = True
     bpy.context.scene.blosm.buildings = True
     bpy.context.scene.blosm.forests = True
-    bpy.context.scene.blosm.treeDensity = 15
+    bpy.context.scene.blosm.treeDensity = 30
     bpy.context.scene.blosm.singleObject = True
     bpy.context.scene.blosm.ignoreGeoreferencing = True
     bpy.ops.blosm.import_data()
@@ -77,6 +77,8 @@ def ChnageOSMServer():
     if OSMServer == "overpass-api.de":
         OSMServer = "openstreetmap.tw"
     elif OSMServer == "openstreetmap.tw":
+        OSMServer = "vk-maps"
+    elif OSMServer == "vk-maps":
         OSMServer = "kumi.systems"
     elif OSMServer == "kumi.systems":
         OSMServer = "openstreetmap.fr"  
@@ -100,7 +102,7 @@ def CreateTile(GLBFileName, OBJFileName):
             layerObjects.name 
             if layerObjects.name == layerName:
 				# Add Forest to the tiles
-                # ConvertForest()
+                ConvertForest()
                 bpy.data.objects.remove(bpy.context.scene.objects[layerObjects.name], do_unlink = True)
                 print(style.BLUE)
                 print("*********************************************")
@@ -135,17 +137,25 @@ def CreateTile(GLBFileName, OBJFileName):
         # Geometry
         export_apply=False,
         export_texcoords=True,
-        export_normals=False,
+        export_normals=True,
         export_tangents=False,
         export_colors=False,
         export_materials='EXPORT',
         export_image_format='AUTO',
-        # Geometry Compression
+        # Geometry Compression     
+        # export_draco_mesh_compression_enable (boolean, (optional)) – Draco mesh compression, Compress mesh using Draco
+        # export_draco_mesh_compression_level [0, 10] {6}– Compression level, Compression level 0 = most speed, 6 = most compression, higher values currently not supported
+        # export_draco_position_quantization [0, 30] {14} – Position quantization bits, Quantization bits for position values (0 = no quantization)
+        # export_draco_normal_quantization [0, 30] {10} – Normal quantization bits, Quantization bits for normal values (0 = no quantization)
+        # export_draco_texcoord_quantization [0, 30] {12} – Texcoord quantization bits, Quantization bits for texture coordinate values (0 = no quantization)
+        # export_draco_color_quantization [0, 30] – Color quantization bits, Quantization bits for color values (0 = no quantization)
+        # export_draco_generic_quantization [0, 30] {12} – Generic quantization bits, Quantization bits for generic coordinate values like weights or joints (0 = no quantization)
+  
         export_draco_mesh_compression_enable=True,
         export_draco_mesh_compression_level=6,
-        export_draco_position_quantization=14,
+        export_draco_position_quantization=0,
         export_draco_normal_quantization=10,
-        export_draco_color_quantization = 10,
+        export_draco_color_quantization=0,
         export_draco_texcoord_quantization=12,
         export_draco_generic_quantization=12,
         # Animation
@@ -249,6 +259,7 @@ for Lon in Coord_X(Cxl, Cxr, Size):
             bpy.context.scene.blosm.minLon = round(Lon, 3)
             while True:
                 try:
+                    
                     ImportTerrain()
                     ImportOSM()
                     break
