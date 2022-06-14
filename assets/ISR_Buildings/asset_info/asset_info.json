@@ -1,0 +1,676 @@
+{
+    "buildings": [
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+                    "type": "texture",
+                    "material": "brick",
+                    "textureWidthM": 1.5,
+                    "name": "grey_brick.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+                    "type": "texture",
+                    "material": "brick",
+                    "textureWidthM": 1.7999999523162842,
+                    "name": "grey_wall_brick.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+                    "type": "texture",
+                    "material": "plaster",
+                    "textureWidthM": 1.0,
+                    "name": "wallsIII01.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+                    "type": "texture",
+                    "material": "plaster",
+                    "textureWidthM": 1.0,
+                    "name": "Plaster006.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+					"type": "texture",
+                    "material": "plaster",
+					"textureWidthM": 1.0,
+                    "name": "wallsIII07.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+					"type": "texture",
+                    "material": "concrete",
+					"textureWidthM": 4.0,
+                    "name": "concrete01.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+					"type": "texture",
+                    "material": "concrete",
+					"textureWidthM": 3.0,
+                    "name": "concrete06.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+					"type": "texture",
+                    "material": "metal",
+					"textureWidthM": 2.5,
+                    "name": "metallII01.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+					"type": "texture",
+                    "material": "metal",
+					"textureWidthM": 1.8,
+                    "name": "metallII08.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+					"type": "texture",
+					"material": "glass",
+					"textureWidthM": 6.0,
+					"name": "BuildingsOffice_04.jpg",
+					"path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+					"type": "texture",
+					"material": "glass",
+					"textureWidthM": 7.0,
+					"name": "facadeII05.jpg",
+					"path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+					"type": "texture",
+					"material": "glass",
+					"textureWidthM": 4.0,
+					"name": "pro_6841.jpg",
+					"path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+		{
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+					"type": "texture",
+                    "material": "gravel",
+					"textureWidthM": 2.0,
+                    "name": "gravel04.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+                    "type": "texture",
+                    "material": "roof_tiles",
+                    "textureWidthM": 4.5,
+                    "name": "RoofShingels6.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+                    "type": "texture",
+                    "material": "roof_tiles",
+                    "textureWidthM": 4.5,
+                    "name": "RoofShingels6A.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+                    "type": "texture",
+                    "material": "roof_tiles",
+                    "textureWidthM": 5.0,
+                    "name": "Rooftiles0094.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+                    "type": "texture",
+                    "material": "roof_tiles",
+                    "textureWidthM": 4.0,
+                    "name": "Rooftiles0097.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "any",
+            "assets": [
+                {
+                    "category": "cladding",
+                    "type": "texture",
+                    "material": "roof_tiles",
+                    "textureWidthM": 3.0,
+                    "name": "Rooftiles0100.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "apartments",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 5.5,
+                    "featureLpx": 20,
+                    "featureRpx": 375,
+                    "numTilesU": 2,
+                    "numTilesV": 2,
+                    "cladding": 1,
+					"name": "resident_101.png",
+					"path": "/ISR_Buildings/assets"
+                },
+				{
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 1.2,
+                    "featureLpx": 144,
+                    "featureRpx": 314,
+                    "numTilesU": 2,
+                    "numTilesV": 2,
+                    "cladding": 1,
+                    "name": "resident_101_B.png",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "apartments",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 4.9,
+                    "featureLpx": 6,
+                    "featureRpx": 245,
+                    "numTilesU": 2,
+                    "numTilesV": 3,
+                    "cladding": 0,
+                    "name": "Residentia_02.jpg",
+                    "path": "/ISR_Buildings/assets"
+                },
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 1.3,
+                    "featureLpx": 87,
+                    "featureRpx": 155,
+                    "numTilesU": 2,
+                    "numTilesV": 3,
+                    "cladding": 0,
+                    "name": "Residentia_02_B.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "apartments",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 1.2,
+                    "featureLpx": 30,
+                    "featureRpx": 367,
+                    "numTilesU": 2,
+                    "numTilesV": 6,
+                    "cladding": 0,
+                    "name": "Residentia_03.jpg",
+                    "path": "/ISR_Buildings/assets"
+                },
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 1.2,
+                    "featureLpx": 105,
+                    "featureRpx": 162,
+                    "numTilesU": 2,
+                    "numTilesV": 6,
+                    "cladding": 0,
+                    "name": "Residentia_03_B.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "apartments",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 5.2,
+                    "featureLpx": 0,
+                    "featureRpx": 274,
+                    "numTilesU": 3,
+                    "numTilesV": 5,
+                    "cladding": 0,
+                    "name": "Residentia_06.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "apartments",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 3.5,
+                    "featureLpx": 0,
+                    "featureRpx": 391,
+                    "numTilesU": 2,
+                    "numTilesV": 5,
+                    "cladding": 0,
+                    "name": "Residentia_08.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "apartments",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 9.6,
+                    "featureLpx": 0,
+                    "featureRpx": 407,
+                    "numTilesU": 2,
+                    "numTilesV": 4,
+                    "cladding": 0,
+					"name": "Residentia_07.jpg",
+					"path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "apartments",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 2.5,
+                    "featureLpx": 0,
+                    "featureRpx": 252,
+                    "numTilesU": 3,
+                    "numTilesV": 4,
+                    "cladding": 0,
+                    "name": "Residentia_04.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "apartments",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 6.5,
+                    "featureLpx": 187,
+                    "featureRpx": 435,
+                    "numTilesU": 4,
+                    "numTilesV": 6,
+                    "cladding": 0,
+                    "name": "Residentia_05.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+		{
+			"use": "apartments",
+			"assets": [
+				{
+					"category": "part",
+					"part": "level",
+					"type": "texture",
+					"featureWidthM": 1.5,
+					"featureLpx": 35,
+					"featureRpx": 345,
+					"numTilesU": 1,
+					"numTilesV": 4,
+					"cladding": 1,
+					"name": "pro_6908.png",
+					"path": "/ISR_Buildings/assets"
+				},
+				{
+					"category": "part",
+					"part": "level",
+					"type": "texture",
+					"featureWidthM": 1.5,
+					"featureLpx": 39,
+					"featureRpx": 92,
+					"numTilesU": 2,
+					"numTilesV": 4,
+					"cladding": 1,
+					"name": "pro_6908_B.png",
+					"path": "/ISR_Buildings/assets"
+				}
+			]
+		},
+		{
+			"use": "apartments",
+			"assets": [
+				{
+					"category": "part",
+					"part": "level",
+					"type": "texture",
+					"featureWidthM": 3.0,
+					"featureLpx": 177,
+					"featureRpx": 346,
+					"numTilesU": 4,
+					"numTilesV": 6,
+					"cladding": 0,
+					"name": "residential_104.jpg",
+					"path": "/ISR_Buildings/assets"
+				},
+				{
+					"category": "part",
+					"part": "level",
+					"type": "texture",
+					"featureWidthM": 1.2,
+					"featureLpx": 51,
+					"featureRpx": 114,
+					"numTilesU": 3,
+					"numTilesV": 6,
+					"cladding": 0,
+					"name": "residential_104_B_Side.jpg",
+					"path": "/ISR_Buildings/assets"
+				}
+			]
+		},
+        {
+            "use": "office",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 1.8,
+                    "featureLpx": 50,
+                    "featureRpx": 135,
+                    "numTilesU": 3,
+                    "numTilesV": 3,
+                    "cladding": 1,
+					"name": "facade_06.png",
+					"path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "office",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "curtain_wall",
+                    "type": "texture",
+                    "featureWidthM": 1.2,
+                    "featureLpx": 0,
+                    "featureRpx": 63,
+                    "numTilesU": 126,
+                    "numTilesV": 4,
+                    "cladding": 0,
+                    "name": "BuildingsOffice_01.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "office",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "curtain_wall",
+                    "type": "texture",
+                    "featureWidthM": 1.8,
+                    "featureLpx": 0,
+                    "featureRpx": 205,
+                    "numTilesU": 5,
+                    "numTilesV": 3,
+                    "cladding": 0,
+					"name": "BuildingsOffice_02.jpg",
+					"path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "office",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "curtain_wall",
+                    "type": "texture",
+                    "featureWidthM": 1.2,
+                    "featureLpx": 63,
+                    "featureRpx": 126,
+                    "numTilesU": 13,
+                    "numTilesV": 7,
+                    "cladding": 0,
+                    "name": "BuildingsOffice_03.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "office",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 1.0,
+                    "featureLpx": 64,
+                    "featureRpx": 311,
+                    "numTilesU": 2,
+                    "numTilesV": 2,
+                    "cladding": 1,
+                    "name": "facades_08.png",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "office",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 1.0,
+                    "featureLpx": 41,
+                    "featureRpx": 174,
+                    "numTilesU": 4,
+                    "numTilesV": 2,
+                    "cladding": 1,
+                    "name": "facades_08_B.png",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "office",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 1.5,
+                    "featureLpx": 54,
+                    "featureRpx": 171,
+                    "numTilesU": 4,
+                    "numTilesV": 2,
+                    "cladding": 1,
+                    "name": "buildings11trans.png",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "office",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 1.5,
+                    "featureLpx": 66,
+                    "featureRpx": 205,
+                    "numTilesU": 4,
+                    "numTilesV": 2,
+                    "cladding": 0,
+                    "name": "buildings_0011.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+        {
+            "use": "office",
+            "assets": [
+                {
+                    "category": "part",
+                    "part": "level",
+                    "type": "texture",
+                    "featureWidthM": 1.1,
+                    "featureLpx": 70,
+                    "featureRpx": 180,
+                    "numTilesU": 4,
+                    "numTilesV": 3,
+                    "cladding": 0,
+                    "name": "facade_018.jpg",
+                    "path": "/ISR_Buildings/assets"
+                }
+            ]
+        },
+		{
+			"use": "office",
+			"assets": [
+				{
+					"category": "part",
+					"part": "level",
+					"type": "texture",
+					"featureWidthM": 3.5,
+					"featureLpx": 149,
+					"featureRpx": 260,
+					"numTilesU": 3,
+					"numTilesV": 3,
+					"cladding": 1,
+					"name": "pro_2157.png",
+					"path": "/ISR_Buildings/assets"
+				},
+				{
+					"category": "part",
+					"part": "level",
+					"type": "texture",
+					"featureWidthM": 3.0,
+					"featureLpx": 130,
+					"featureRpx": 230,
+					"numTilesU": 3,
+					"numTilesV": 4,
+					"cladding": 1,
+					"name": "pro_2161.png",
+					"path": "/ISR_Buildings/assets"
+				}
+			]
+		}
+	]
+}
