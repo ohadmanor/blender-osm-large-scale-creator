@@ -1,5 +1,6 @@
 echo off
 @SETLOCAL enabledelayedexpansion
+SET NODE_OPTIONS=--max-old-space-size=8192
 echo start create 3D tiles
 
 :: Get the project path
@@ -25,14 +26,14 @@ call %BlenderFolder%\blender startup.blend --background --python  3D_Tiles.py
 :: Generate finle b3dm
 for %%f in (%GLBFolder%\*.glb) do (
 	echo the file size: %%~zf
-	if %%~zf LSS 2000 (
+	if %%~zf LSS 896 (
 		del %GLBFolder%\%%~nf.glb
 		del %GLBFolder%\%%~nf.json
 		) else (
-			if not exist %TileFolder%\Tiles%%~nf mkdir %TileFolder%\Tiles%%~nf
+			if not exist %TileFolder%\t%%~nf mkdir %TileFolder%\t%%~nf
 			for /f "delims==" %%x in (%GLBFolder%\%%~nf.json) do set data=%%x
-			cmd /c npx ts-node %tiletool%\src\cli\main.ts glbToB3dm -i %GLBFolder%\%%~nf.glb -o %TileFolder%\Tiles%%~nf\%%~nf.b3dm -f
-			cmd /c npx ts-node %tiletool%\src\cli\main.ts createTilesetJson -i %TileFolder%\Tiles%%~nf\%%~nf.b3dm -o %TileFolder%\Tiles%%~nf\tileset.json --cartographicPositionDegrees !data! -f
+			cmd /c npx ts-node %tiletool%\src\cli\main.ts glbToB3dm -i %GLBFolder%\%%~nf.glb -o %TileFolder%\t%%~nf\%%~nf.b3dm -f
+			cmd /c npx ts-node %tiletool%\src\cli\main.ts createTilesetJson -i %TileFolder%\t%%~nf\%%~nf.b3dm -o %TileFolder%\t%%~nf\tileset.json --cartographicPositionDegrees !data! -f
 		)
 	)
 
@@ -40,7 +41,8 @@ for /f "delims=" %%d in ('dir %CurrDirName% /a:d /b') do (
 	set /p= -i %%d\tileset.json <nul >>temp.txt
 	)
 
-set /p command=<temp.txt
+for /f "tokens=* delims=" %%c in (temp.txt) do set command=!command!%%c
+
 cd %TilesDir%%CurrDirName%
 cmd /c npx ts-node %tiletool%\src\cli\main.ts merge %command% -o .\ -f
 

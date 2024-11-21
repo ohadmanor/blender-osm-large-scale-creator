@@ -1,5 +1,9 @@
-# blender-osm-large-scale-creator
-this project help to create multiply tiles with blender-osm premium version.
+# Install new version of 3d-tiles-tools
+1. if npm install dosen't work do the following:
+	a. Close VS and double-click C:\Program Files\nodejs\install_tools.bat from the File Explorer to run
+	b. Change the "better-sqlite3": "^11.5.0" version to the latest one.
+	C. (Opetional) look here https://github.com/CesiumGS/3d-tiles-tools
+
 
 # This project meant to give an idea how to massive generated 3Dtiles from OSM.
 to use this procedure you need to do the following:
@@ -11,30 +15,30 @@ https://wiki.openstreetmap.org/wiki/Blender
 2. download blender - https://www.blender.org/download/
 I suggest to download the portable version and extract it on this main folder under blender folder.
 this result will create the following folder structure:
-		blender\2.92
+		blender\4.2
 			   \blender.crt
 			   \license
 			   blender.exe
 			   etc.
 
 3. download your blender-osm premium version and extract it according to the following:
-	blender-osm copy to blender\2.92\scripts\addons
+	blender-osm copy to blender\4.2\scripts\addons_core
 	assests copy to blender\TEMP (you need to create the TEMP folder in the blender tree)
 	
-4. Download the GLTF add-on
-I'm not sure why the build in version do not work correctlly with the compression so I'm suggest for you to download it and replce the one that come with blender.
+4. Download the GLTF add-on (OBSOLETE!)
+	I'm not sure why the build in version do not work correctlly with the compression so I'm suggest for you to download it and replce the one that come with blender.
 
-download it from: https://github.com/KhronosGroup/glTF-Blender-IO/tree/master/addons/io_scene_gltf2
-go to blender\2.92\scripts\addons and delete the io_scene_gltf2 folder then copy the download version to blender\2.92\scripts\addons 
+	download it from: https://github.com/KhronosGroup/glTF-Blender-IO/tree/master/addons/io_scene_gltf2
+	go to blender\4.2\scripts\addons and delete the io_scene_gltf2 folder then copy the download version to blender\4.2\scripts\addons 
 
 
 5. preaper the blnder enviroment
-run the ENV_Install.bat 
-this bat file do the following:
-	1. install a helper tools:
-		3d-tiles-tools - convert glb to B3dm
-		obj23dtiles - tool to generate the tile json file.
-	2. config the blender.
+	run the ENV_Install.bat 
+	this bat file do the following:
+		1. install a helper tools:
+			3d-tiles-tools - convert glb to B3dm
+			obj23dtiles - tool to generate the tile json file.
+		2. config the blender.
 	
 
 6. Start to create you tiles:
@@ -45,6 +49,7 @@ this bat file do the following:
 	4. startup.blend - blender empty project.
 	
 	after you set the area to extract run the bat file.
+
 
 
 

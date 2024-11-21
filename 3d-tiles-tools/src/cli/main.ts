@@ -225,6 +225,16 @@ function parseToolArgs(a: string[]) {
         },
       }
     )
+    .command(
+      "updateAlignment",
+      "Update the alignment of the batch- and feature table and the tile data" +
+        "as a whole, to meet the alignment requirements of the specification. " +
+        "This can be applied to B3DM, I3DM, PNTS, or CMPT tile data.",
+      {
+        i: inputStringDefinition,
+        o: outputStringDefinition,
+      }
+    )
     .command("gzip", "Gzips the input tileset directory.", {
       i: inputStringDefinition,
       o: outputStringDefinition,
@@ -247,7 +257,18 @@ function parseToolArgs(a: string[]) {
     .command(
       "merge",
       "Merge any number of tilesets together into a single tileset.",
-      { i: inputArrayDefinition, o: outputStringDefinition }
+      {
+        i: inputArrayDefinition,
+        o: outputStringDefinition,
+      }
+    )
+    .command(
+      "mergeJson",
+      "Merge any number of tilesets together into a single tileset without copying resources to output directory.",
+      {
+        i: inputArrayDefinition,
+        o: outputStringDefinition,
+      }
     )
     .command(
       "upgrade",
@@ -447,6 +468,8 @@ async function run() {
   await runCommand(command, parsedToolArgs, optionArgs);
   const afterMs = performance.now();
   logger.info(`Total: ${(afterMs - beforeMs).toFixed(3)} ms`);
+  // This is not part of the Logger API!:
+  logger.flush();
 }
 
 async function runCommand(command: string, toolArgs: any, optionArgs: any) {
@@ -488,6 +511,8 @@ async function runCommand(command: string, toolArgs: any, optionArgs: any) {
     await ToolsMain.optimizeB3dm(input, output, force, parsedOptionArgs);
   } else if (command === "optimizeI3dm") {
     await ToolsMain.optimizeI3dm(input, output, force, parsedOptionArgs);
+  } else if (command === "updateAlignment") {
+    await ToolsMain.updateAlignment(input, output, force);
   } else if (command === "gzip") {
     const tilesOnly = toolArgs.tilesOnly === true;
     await ToolsMain.gzip(input, output, force, tilesOnly);
@@ -523,6 +548,8 @@ async function runCommand(command: string, toolArgs: any, optionArgs: any) {
     );
   } else if (command === "merge") {
     await ToolsMain.merge(inputs, output, force);
+  } else if (command === "mergeJson") {
+    await ToolsMain.mergeJson(inputs, output, force);
   } else if (command === "pipeline") {
     await ToolsMain.pipeline(input, force);
   } else if (command === "analyze") {

@@ -14,6 +14,8 @@ If you want to work directly with a clone of the Git repository, see [Developer 
 
 ## Command Line Usage
 
+> **Note:** All input- and output paths for the 3D Tiles Tools are _case sensitive_. Even though some operating systems (like Windows) usually do not differentiate between uppercase and lowercase, the file- and directory names that are given at the command line must exactly match the actual names.
+
 #### Common command line options for each function:
 
 |Flag|Description|Required|
@@ -52,6 +54,11 @@ npx 3d-tiles-tools ungzip -i ./specs/data/TilesetOfTilesets-gzipped/ -o ./output
 #### combine
 
 Combines all external tilesets into a single tileset.
+
+> **Note** about the difference between `merge` and `combine`: The `combine` command takes a tileset that already _refers_ to _external_ tilesets. And it creates a new tileset where the former _external_ tilesets are "inlined". So the result will be a single tileset, without external references.
+
+Example:
+
 ```
 npx 3d-tiles-tools combine -i ./specs/data/combineTilesets/input -o ./specs/data/combineTilesets/output
 ```
@@ -59,8 +66,23 @@ npx 3d-tiles-tools combine -i ./specs/data/combineTilesets/input -o ./specs/data
 #### merge
 
 Merge multiple tilesets into a single one that refers to the input tilesets as external tilesets.
+
+> **Note** about the difference between `merge` and `combine`: The `merge` command creates a _new_ tileset that _refers_ to the given ones as _external_ tilsets. This means that the resulting tileset is not complete _without_ the ones that are used as the inputs for the `merge` command.
+
+Example:
 ```
 npx 3d-tiles-tools merge -i ./specs/data/mergeTilesets/TilesetA -i ./specs/data/mergeTilesets/sub/TilesetA -o ./specs/data/mergeTilesets/output
+```
+
+#### mergeJson
+
+Merge multiple tilesets into a single tileset JSON file that refers to the input tilesets as external tilesets. 
+
+This differs from the `merge` command insofar that it does not copy the input tilesets to the output directory, but only creates the JSON file for the merged tileset, which uses relative paths to refer to the input tilesets. A common use case for this is to create a tileset JSON file in a certain directory, with the input tilesets being located in subdirectories.
+
+Example:
+```
+npx 3d-tiles-tools mergeJson -i ./example/TilesetA/tileset.json -i ./example/TilesetB/tileset.json -o ./example/mergedTileset.json
 ```
 
 #### upgrade
@@ -101,11 +123,11 @@ When `--targetVersion 1.1` is given, then this will upgrade legacy tilesets to c
 - The `refine` value will be converted to be in all-uppercase.
 - glTF 1.0 models in B3DM or I3DM will be upgraded to glTF 2.0.
 - The `3DTILES_content_gltf` extension declaration will be removed.
-- PNTS, B3DM, and I3DM content will be converted to glTF.
+- PNTS, B3DM, I3DM, and CMPT content will be converted to glTF.
 
 > Implementation note:
 > 
-> The conversion of the legacy tile formats to glTF should be considered as a _preview feature_. There are corner cases where the conversion is not possible generically - for example, when I3DM tile content contains glTF data that contains _animations_. The conditions under which the conversion is possible may be specified more explicitly in the future. 
+> The conversion of the legacy tile formats to glTF should be considered as a _preview feature_. There are corner cases where the conversion is not possible generically - for example, when I3DM tile content contains glTF data that contains _animations_, or when a CMPT (indirectly) contains multiple glTF assets that already use the `EXT_structural_metadata` extension. The conditions under which the conversion is possible may be specified more explicitly in the future. 
 
 
 
@@ -254,12 +276,22 @@ This example optimizes the b3dm and compresses the meshes using Draco, with a hi
 
 #### optimizeI3dm
 
-Optimize a i3dm using [gltf-pipeline](https://github.com/CesiumGS/gltf-pipeline/blob/main/README.md).
+Optimize an i3dm using [gltf-pipeline](https://github.com/CesiumGS/gltf-pipeline/blob/main/README.md).
 ```
 npx 3d-tiles-tools optimizeI3dm -i ./specs/data/instancedWithBatchTableBinary.i3dm -o ./output/optimized.i3dm
 ```
 See [optimizeB3dm](#optimizeb3dm) for further examples.
 
+
+#### updateAlignment
+
+Update a B3DM, I3DM, PNTS or CMPT file to ensure that the alignment requirements
+for the batch- and feature tables and the tile data as a whole are met. For CMPT
+tile data, the data of inner tiles will be updated recursively.
+
+```
+npx 3d-tiles-tools updateAlignment -i ./specs/data/updateAlignment/testComposite.cmpt -o ./output/testCompositeFixed.cmpt
+```
 
 
 #### analyze

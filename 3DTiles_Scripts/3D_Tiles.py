@@ -48,7 +48,7 @@ def ImportOSM():
     bpy.context.scene.blosm.osmSource = 'server'
     bpy.context.scene.blosm.terrainObject = "Terrain"
     bpy.context.scene.blosm.mode = '3Drealistic'
-    bpy.context.scene.blosm.assetPackage = 'ISR_Buildings_2'
+    bpy.context.scene.blosm.assetPackage = asset_package
     bpy.context.scene.blosm.importForExport = True
     bpy.context.scene.blosm.buildings = True
     bpy.context.scene.blosm.forests = True
@@ -62,7 +62,7 @@ def ImportOSMNoBuildings():
     bpy.context.scene.blosm.osmSource = 'server'
     bpy.context.scene.blosm.terrainObject = "Terrain"
     bpy.context.scene.blosm.mode = '3Drealistic'
-    bpy.context.scene.blosm.assetPackage = 'ISR_Buildings_2'
+    bpy.context.scene.blosm.assetPackage = asset_package
     bpy.context.scene.blosm.importForExport = True
     bpy.context.scene.blosm.buildings = False
     bpy.context.scene.blosm.forests = True
@@ -151,7 +151,6 @@ def CreateTile(GLBFileName):
         export_texcoords=True,
         export_normals=True,
         export_tangents=False,
-        export_colors=False,
         export_materials='EXPORT',
         export_image_format='AUTO',
         # Geometry Compression     
@@ -167,7 +166,7 @@ def CreateTile(GLBFileName):
         export_draco_mesh_compression_level=6,
         export_draco_position_quantization=0,
         export_draco_normal_quantization=10,
-        export_draco_color_quantization=10,
+        export_draco_color_quantization=3,
         export_draco_texcoord_quantization=12,
         export_draco_generic_quantization=12,
         # Animation
@@ -197,18 +196,23 @@ dirname = os.path.dirname(__file__)
 coord = open("AreaToExtract.txt", "r")
 for Value in coord:
     Value = Value.rstrip()
-    X1, X2, Y1, Y2, T = Value.split(',')
+    X1, X2, Y1, Y2, T, ASSET = Value.split(',')
 # Convert string to float
 Cxl = float(X1)
 Cxr = float(X2)
 Cyu = float(Y1)
 Cyd = float(Y2)
 Size = float(T)
+if (str(ASSET)==''):
+    asset_package = 'default'
+else:
+    asset_package = str(ASSET)
 print (style.BCKBLUE)
 print ("***********************************************************************")
 print ("             X coordinat - Left / Right:", Cxl, " / ", Cxr)
 print ("             Y coordinat - Up / Down:", Cyu, " / ", Cyd)
 print ("             Tile Size:", Size)
+print ("             Package to use:", asset_package)
 print ("***********************************************************************")
 print (style.RESET)
 
@@ -245,9 +249,8 @@ for Lon in Coord_X(Cxl, Cxr, Size):
             while True:
                 try:
                     ImportTerrain()
-                    # code to tiles -> create tile with no buldings
-                    # ISR South 34.5_31.2 => mala 35.2_31.4 = Broken
-                    if (round(Lon, 3)==34.5 and round(Lat, 3)==31.2) or (round(Lon, 3)==35.2 and round(Lat, 3)==31.4):
+                    # Skip broken Tiles: 34.5_31.2 => mala | 35.2_31.4 => Broken | -6.0_36.3 => Broken
+                    if (round(Lon, 3)==34.5 and round(Lat, 3)==31.2) or (round(Lon, 3)==35.2 and round(Lat, 3)==31.4) or (round(Lon, 3)==-6.0 and round(Lat, 3)==36.3):
                         print(style.BCKRED)
                         print("******** The File " + GLBTileName + "is No Buildings  ************")
                         print(style.RESET)

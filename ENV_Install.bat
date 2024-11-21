@@ -6,6 +6,6 @@ set Directory=%~dp0
 set BlenderFolder=%Directory%\blender
 call %BlenderFolder%\blender startup.blend --python  setup.py
 
-echo Installation had done
+echo Installation has done
 
 pause

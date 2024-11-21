@@ -1,3 +1,4 @@
-35.3,35.8,33.0,32.6,0.1
+35.3,35.8,33.0,32.6,0.1,ISR_Buildings_2
 
 # X-left,X-right,Y-up,Y-down,Tile-Size
+# Packages: default / ISR_Buildings / ISR_Buildings_2 / ISR_Pack
