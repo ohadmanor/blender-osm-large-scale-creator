@@ -1,0 +1,281 @@
+{"buildings": [
+{
+	"use": "apartments",
+	"assets": [
+		{
+			"category": "part",
+			"part": "level",
+			"name": "pro_6908_exp.png",
+			"type": "texture",
+			"path": "textures/facades/appartments",
+			"cladding": 1,
+			"featureWidthM": 1.5,
+			"featureLpx": 25,
+			"featureRpx": 61,
+			"numTilesU": 3,
+			"numTilesV": 4
+		}
+	]
+},
+{
+	"use": "office",
+	"assets": [
+		{
+			"category": "part",
+			"part": "level",
+			"name": "pro_2157_exp.png",
+			"type": "texture",
+			"path": "textures/facades/office",
+			"cladding": 1,
+			"featureWidthM": 3.5,
+			"featureLpx": 93,
+			"featureRpx": 163,
+			"numTilesU": 3,
+			"numTilesV": 3
+		},
+		{
+			"category": "part",
+			"part": "level",
+			"name": "pro_2161_exp.png",
+			"type": "texture",
+			"path": "textures/facades/office",
+			"cladding": 1,
+			"featureWidthM": 3.0,
+			"featureLpx": 92,
+			"featureRpx": 163,
+			"numTilesU": 3,
+			"numTilesV": 4
+		}
+	]
+},
+{
+	"use": "office",
+	"assets": [
+		{
+			"category": "part",
+			"part": "level",
+			"name": "pro_2353_exp.png",
+			"type": "texture",
+			"path": "textures/facades/office",
+			"cladding": 1,
+			"featureWidthM": 0.8,
+			"featureLpx": 63,
+			"featureRpx": 81,
+			"numTilesU": 4,
+			"numTilesV": 3
+		}
+	]
+},
+{
+	"use": "office",
+	"assets": [
+		{
+			"category": "part",
+			"part": "level",
+			"name": "pro_2901_exp.png",
+			"type": "texture",
+			"path": "textures/facades/office",
+			"cladding": 1,
+			"featureWidthM": 1.0,
+			"featureLpx": 109,
+			"featureRpx": 147,
+			"numTilesU": 3,
+			"numTilesV": 2
+		}
+	]
+},
+{
+	"use": "office",
+	"assets": [
+		{
+			"category": "part",
+			"part": "curtain_wall",
+			"name": "pro_6841_exp.jpg",
+			"type": "texture",
+			"specularMapName": "pro_6841_exp_diffuse.png",
+			"claddingColor": 1,
+			"path": "textures/facades/glass",
+			"featureWidthM": 1.2,
+			"featureLpx": 0,
+			"featureRpx": 64,
+			"numTilesU": 4,
+			"numTilesV": 3
+		}
+	]
+},
+{
+	"use": "office",
+	"assets": [
+		{
+			"category": "part",
+			"part": "curtain_wall",
+			"name": "pro_6848_exp.jpg",
+			"type": "texture",
+			"specularMapName": "pro_6848_exp_diffuse.png",
+			"claddingColor": 1,
+			"path": "textures/facades/glass",
+			"featureWidthM": 1.0,
+			"featureLpx": 0,
+			"featureRpx": 43,
+			"numTilesU": 9,
+			"numTilesV": 2
+		}
+	]
+},
+{
+	"use": "any",
+	"assets": [
+		{
+			"category": "cladding",
+			"material": "plaster",
+			"name": "duion_plaster_stucco_01_D_exp.png",
+			"type": "texture",
+			"path": "textures/cladding/plaster",
+			"textureWidthM": 1.5
+		}
+	]
+},
+{
+	"use": "any",
+	"assets": [
+		{
+			"category": "cladding",
+			"material": "plaster",
+			"name": "duion_plaster_sprinkled_01_D_exp.png",
+			"type": "texture",
+			"path": "textures/cladding/plaster",
+			"textureWidthM": 3.0
+		}
+	]
+},
+{
+	"use": "any",
+	"assets": [
+		{
+			"category": "cladding",
+			"material": "brick",
+			"name": "cc0textures_bricks11_col_exp.jpg",
+			"type": "texture",
+			"path": "textures/cladding/brick",
+			"textureWidthM": 1.5
+		}
+	]
+},
+{
+	"use": "any",
+	"assets": [
+		{
+			"category": "cladding",
+			"material": "brick",
+			"name": "duion_bricks_classic_01_D_exp.png",
+			"type": "texture",
+			"path": "textures/cladding/brick",
+			"textureWidthM": 1.2
+		}
+	]
+},
+{
+	"use": "any",
+	"assets": [
+		{
+			"category": "cladding",
+			"material": "brick",
+			"name": "duion_bricks_classic_02_D_exp.png",
+			"type": "texture",
+			"path": "textures/cladding/brick",
+			"textureWidthM": 2.1
+		}
+	]
+},
+{
+	"use": "any",
+	"assets": [
+		{
+			"category": "cladding",
+			"material": "concrete",
+			"name": "duion_concrete_stripes_03_D_exp.png",
+			"type": "texture",
+			"path": "textures/cladding/concrete",
+			"textureWidthM": 4.0
+		}
+	]
+},
+{
+	"use": "any",
+	"assets": [
+		{
+			"category": "cladding",
+			"material": "concrete",
+			"name": "cc0textures_concrete06_col_exp.jpg",
+			"type": "texture",
+			"path": "textures/cladding/concrete",
+			"textureWidthM": 3.0
+		}
+	]
+},
+{
+	"use": "any",
+	"assets": [
+		{
+			"category": "cladding",
+			"material": "concrete",
+			"name": "duion_concrete_rough_01_D_exp.png",
+			"type": "texture",
+			"path": "textures/cladding/concrete",
+			"textureWidthM": 3.0
+		}
+	]
+},
+{
+	"use": "any",
+	"assets": [
+		{
+			"category": "cladding",
+			"material": "gravel",
+			"name": "cc0textures_gravel04_col_exp.jpg",
+			"type": "texture",
+			"path": "textures/cladding/gravel",
+			"textureWidthM": 1.6
+		}
+	]
+},
+{
+	"use": "any",
+	"assets": [
+		{
+			"category": "cladding",
+			"material": "metal",
+			"name": "duion_metal_panels_01_D_exp.png",
+			"type": "texture",
+			"path": "textures/cladding/metal",
+			"textureWidthM": 2.4
+		}
+	]
+},
+{
+	"use": "any",
+	"assets": [
+		{
+			"category": "cladding",
+			"material": "roof_tiles",
+			"name": "rubberduck_220_exp.jpg",
+			"type": "texture",
+			"path": "textures/cladding/roof tiles",
+			"textureWidthM": 1.3
+		}
+	]
+},
+{
+	"use": "any",
+	"assets": [
+		{
+			"category": "cladding",
+			"material": "roof_tiles",
+			"name": "scouser_roof_tiles_arched2_exp.png",
+			"type": "texture",
+			"path": "textures/cladding/roof tiles",
+			"textureWidthM": 1.8
+		}
+	]
+}
+]}
