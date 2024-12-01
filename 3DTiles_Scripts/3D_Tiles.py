@@ -64,6 +64,7 @@ def ImportOSM():
         print(style.RESET)
         reset_blend()
         ImportTerrain()
+        ImportOSMNoBuildings()
         ImportOSMSimple()     
 
 def ImportOSMSimple():
