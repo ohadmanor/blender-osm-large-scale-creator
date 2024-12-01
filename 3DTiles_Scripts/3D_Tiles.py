@@ -280,7 +280,7 @@ for Lon in Coord_X(Cxl, Cxr, Size):
                 else:
                     try:
                         ImportOSM()
-                    break
+                        break
                     except:
                         print(style.BCKRED)
                         print("**** OSM Tile Import Fail . . . ****")
