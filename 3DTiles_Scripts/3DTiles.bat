@@ -19,8 +19,8 @@ SET TileFolder=%TilesDir%%CurrDirName%
 
 if not exist %TileFolder% mkdir %TileFolder%
 :: Generat GLB 3D tiles from Blender
-rmdir /S /Q %BlenderFolder%\TEMP\osm\osm
-rmdir /S /Q %BlenderFolder%\TEMP\osm\texture
+rmdir /S /Q %Directory%\3D_Assets\osm\osm
+rmdir /S /Q %Directory%\3D_Assets\osm\texture
 call %BlenderFolder%\blender startup.blend --background --python  3D_Tiles.py
 
 :: Generate finle b3dm

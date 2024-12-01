@@ -41,7 +41,8 @@ def ImportTerrain():
     bpy.context.scene.blosm.dataType = 'terrain'
     bpy.context.scene.blosm.relativeToInitialImport = False
     bpy.context.scene.blosm.terrainReductionRatio = '1'
-    bpy.ops.blosm.import_data()      
+    bpy.ops.blosm.import_data()
+    bpy.ops.object.modifier_remove(modifier="Terrain Base")    
 
 def ImportOSM():
     bpy.context.scene.blosm.dataType = 'osm'
@@ -52,10 +53,34 @@ def ImportOSM():
     bpy.context.scene.blosm.importForExport = True
     bpy.context.scene.blosm.buildings = True
     bpy.context.scene.blosm.forests = True
-    bpy.context.scene.blosm.treeDensity = 15
+    bpy.context.scene.blosm.treeDensity = 20
     bpy.context.scene.blosm.singleObject = True
     bpy.context.scene.blosm.relativeToInitialImport = False
-    bpy.ops.blosm.import_data()
+    try:
+        bpy.ops.blosm.import_data()
+    except:
+        print(style.BCKRED)
+        print("**** Zero Division Error . . . ****")
+        print(style.RESET)
+        reset_blend()
+        ImportTerrain()
+        ImportOSMSimple()     
+
+def ImportOSMSimple():
+    bpy.context.scene.blosm.dataType = 'osm'
+    bpy.context.scene.blosm.osmSource = 'server'
+    bpy.context.scene.blosm.terrainObject = "Terrain"
+    bpy.context.scene.blosm.mode = '3Dsimple'
+    bpy.context.scene.blosm.buildings = True
+    bpy.context.scene.blosm.water = False
+    bpy.context.scene.blosm.forests = False
+    bpy.context.scene.blosm.vegetation = False
+    bpy.context.scene.blosm.highways = False
+    bpy.context.scene.blosm.defaultRoofShape = 'flat'
+    bpy.context.scene.blosm.levelHeight = 2.5
+    bpy.context.scene.blosm.singleObject = True
+    bpy.context.scene.blosm.relativeToInitialImport = False
+    bpy.ops.blosm.import_data()    
 
 def ImportOSMNoBuildings():
     bpy.context.scene.blosm.dataType = 'osm'
@@ -66,7 +91,7 @@ def ImportOSMNoBuildings():
     bpy.context.scene.blosm.importForExport = True
     bpy.context.scene.blosm.buildings = False
     bpy.context.scene.blosm.forests = True
-    bpy.context.scene.blosm.treeDensity = 15
+    bpy.context.scene.blosm.treeDensity = 20
     bpy.context.scene.blosm.singleObject = True
     bpy.context.scene.blosm.relativeToInitialImport = False
     bpy.ops.blosm.import_data()
@@ -219,8 +244,8 @@ print (style.RESET)
 # set OSM server
 OSMServer = ""
 ChnageOSMServer()
-DD = os.path.join(ParentFolder + '/blender/TEMP/osm/')
-AD = os.path.join(ParentFolder + '/blender/TEMP/assets/')
+DD = os.path.join(ParentFolder + '/3D_Assets/osm/')
+AD = os.path.join(ParentFolder + '/3D_Assets/assets/')
 bpy.context.preferences.addons["blosm"].preferences.dataDir = DD
 bpy.context.preferences.addons["blosm"].preferences.assetsDir = AD
 bpy.context.preferences.addons["blosm"].preferences.enableExperimentalFeatures = True
@@ -247,23 +272,21 @@ for Lon in Coord_X(Cxl, Cxr, Size):
             bpy.context.scene.blosm.maxLon = round(Lon, 3) + round(Size, 3)
             bpy.context.scene.blosm.minLon = round(Lon, 3)
             while True:
-                try:
-                    ImportTerrain()
-                    # Skip broken Tiles: 34.5_31.2 => mala | 35.2_31.4 => Broken | -6.0_36.3 => Broken
-                    if (round(Lon, 3)==34.5 and round(Lat, 3)==31.2) or (round(Lon, 3)==35.2 and round(Lat, 3)==31.4) or (round(Lon, 3)==-6.0 and round(Lat, 3)==36.3):
-                        print(style.BCKRED)
-                        print("******** The File " + GLBTileName + "is No Buildings  ************")
-                        print(style.RESET)
-                        ImportOSMNoBuildings()
-                    else:
-                        ImportOSM()   
-                    break
-                except:
+                if (round(Lon, 3)==34.5 and round(Lat, 3)==31.2):
                     print(style.BCKRED)
-                    print("**** OSM Tile Import Fail . . . ****")
+                    print("************ Import No Buildings Tile ************")
                     print(style.RESET)
-                    reset_blend()
-                    ChnageOSMServer()
+                    ImportOSMNoBuildings()
+                else:
+                    try:
+                        ImportOSM()
+                    break
+                    except:
+                        print(style.BCKRED)
+                        print("**** OSM Tile Import Fail . . . ****")
+                        print(style.RESET)
+                        reset_blend()
+                        ChnageOSMServer()                  
             CreateTile(GLBTileName)
             reset_blend()
             # Create Json file
