@@ -28,7 +28,7 @@
     "license": [
       "MIT"
     ],
-    "version": "7.0.1",
+    "version": "5.3.2",
     "url": "https://www.npmjs.com/package/archiver"
   },
   {
@@ -36,7 +36,7 @@
     "license": [
       "MIT"
     ],
-    "version": "11.5.0",
+    "version": "11.6.0",
     "url": "https://www.npmjs.com/package/better-sqlite3"
   },
   {
@@ -44,7 +44,7 @@
     "license": [
       "Apache-2.0"
     ],
-    "version": "1.123.1",
+    "version": "1.124.0",
     "url": "https://www.npmjs.com/package/cesium"
   },
   {
@@ -76,7 +76,7 @@
     "license": [
       "MIT"
     ],
-    "version": "0.22.0",
+    "version": "0.19.1",
     "url": "https://www.npmjs.com/package/gltfpack"
   },
   {
@@ -84,7 +84,7 @@
     "license": [
       "MIT"
     ],
-    "version": "0.22.0",
+    "version": "0.19.0",
     "url": "https://www.npmjs.com/package/meshoptimizer"
   },
   {
@@ -108,7 +108,7 @@
     "license": [
       "MIT"
     ],
-    "version": "9.5.0",
+    "version": "8.21.0",
     "url": "https://www.npmjs.com/package/pino"
   },
   {
@@ -116,7 +116,7 @@
     "license": [
       "MIT"
     ],
-    "version": "13.0.0",
+    "version": "10.3.1",
     "url": "https://www.npmjs.com/package/pino-pretty"
   },
   {

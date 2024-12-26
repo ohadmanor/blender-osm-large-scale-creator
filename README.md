@@ -1,10 +1,3 @@
-# Install new version of 3d-tiles-tools
-1. if npm install dosen't work do the following:
-	a. Close VS and double-click C:\Program Files\nodejs\install_tools.bat from the File Explorer to run
-	b. Change the "better-sqlite3": "^11.5.0" version to the latest one.
-	C. (Opetional) look here https://github.com/CesiumGS/3d-tiles-tools
-
-
 # This project meant to give an idea how to massive generated 3Dtiles from OSM.
 to use this procedure you need to do the following:
 
@@ -21,24 +14,27 @@ this result will create the following folder structure:
 			   blender.exe
 			   etc.
 
-3. download your blender-osm premium version and extract it according to the following:
+3. download your blosm premium version and extract it according to the following:
 	blender-osm copy to blender\4.2\scripts\addons_core
 	assests copy to blender\TEMP (you need to create the TEMP folder in the blender tree)
 	
-4. Download the GLTF add-on (OBSOLETE!)
+4. Download the GLTF add-on (**OBSOLETE!**)
 	I'm not sure why the build in version do not work correctlly with the compression so I'm suggest for you to download it and replce the one that come with blender.
 
 	download it from: https://github.com/KhronosGroup/glTF-Blender-IO/tree/master/addons/io_scene_gltf2
 	go to blender\4.2\scripts\addons and delete the io_scene_gltf2 folder then copy the download version to blender\4.2\scripts\addons 
 
+5. Install new version of 3d-tiles-tools
+	a. download the latest code of 3d-tiles-tools from here https://github.com/CesiumGS/3d-tiles-tools
+	b. extract the 3d-tiles-tools folder in to the 3DTiles folder and run npm install.
 
-5. preaper the blnder enviroment
+6. preaper the blnder enviroment (**OBSOLETE!**)
 	run the ENV_Install.bat 
 	this bat file do the following:
-		1. install a helper tools:
+		1. install a helper tools (see sectionn 5):
 			3d-tiles-tools - convert glb to B3dm
-			obj23dtiles - tool to generate the tile json file.
-		2. config the blender.
+			obj23dtiles - tool to generate the tile json file. (**OBSOLETE!**)
+		2. config blosm in blender.
 	
 
 6. Start to create you tiles:
@@ -51,9 +47,7 @@ this result will create the following folder structure:
 	after you set the area to extract run the bat file.
 
 
-
-
-# Blender-osm updates
+# Blosm code changes after install new version.
 
 ## add external command to change the defult assets for 3d realistic
 	in gui\__init__.py file under class BLOSM_OT_ReloadAssetPackageList(bpy.types.Operator): add the following function decleration:

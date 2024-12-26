@@ -261,7 +261,8 @@ for Lon in Coord_X(Cxl, Cxr, Size):
         GLBTileName = os.path.join(dirname, 'GLB', str(round(Lon, 3))+'_'+str(round(Lat, 3)))
         JsonTileName = os.path.join(dirname, 'GLB', str(round(Lon, 3))+'_'+str(round(Lat, 3))+'.json')
         filePath = Path(GLBTileName+'.glb')
-        if filePath.is_file():
+        fileJson = Path(JsonTileName)
+        if filePath.is_file() and fileJson.is_file():
             print(style.YELLOW)
             print ("******** The File " + GLBTileName + " exists, move to next file  ********")
             print(style.RESET)
@@ -272,12 +273,14 @@ for Lon in Coord_X(Cxl, Cxr, Size):
             bpy.context.scene.blosm.minLat = round(Lat, 3) - round(Size, 3)
             bpy.context.scene.blosm.maxLon = round(Lon, 3) + round(Size, 3)
             bpy.context.scene.blosm.minLon = round(Lon, 3)
+            ImportTerrain()
             while True:
                 if (round(Lon, 3)==34.5 and round(Lat, 3)==31.2):
                     print(style.BCKRED)
                     print("************ Import No Buildings Tile ************")
                     print(style.RESET)
                     ImportOSMNoBuildings()
+                    break
                 else:
                     try:
                         ImportOSM()
