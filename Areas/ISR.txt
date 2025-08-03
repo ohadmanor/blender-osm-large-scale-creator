@@ -1,0 +1,6 @@
+Area_Name=ISR
+Assets=ISR_Buildings_2
+Res=0.1
+ISRCenter=34.4,35.6,32.3,31.5
+ISRNorth=34.8,35.8,33.3,32.3
+ISRSouth=34.2,35.5,31.5,29.5

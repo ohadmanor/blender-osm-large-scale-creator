@@ -5,6 +5,7 @@ import pathlib
 import math
 import json
 import requests
+import logging
 from pathlib import Path
 
 # Functions
@@ -216,13 +217,14 @@ def CreateTile(GLBFileName):
 ### Main
 # Find the current working folder
 (ParentFolder, WorkingFolder) = os.path.split(os.getcwd())
-dirname = os.path.dirname(__file__)
+# dirname = os.path.dirname(__file__)
+logging.getLogger('blender_cloud').setLevel(logging.CRITICAL)
 
 # Read Data set polygon to generate 3D tiles the formant is X-left,X-right,Y-up,Y-down,Tile-Size and phrsing to X1,X2,Y1,Y2,T
-coord = open("AreaToExtract.txt", "r")
+coord = sys.argv[sys.argv.index('--') + 1:]
 for Value in coord:
     Value = Value.rstrip()
-    X1, X2, Y1, Y2, T, ASSET = Value.split(',')
+    X1, X2, Y1, Y2, T, ASSET, SubFolder, MainFolder = Value.split(',')
 # Convert string to float
 Cxl = float(X1)
 Cxr = float(X2)
@@ -233,6 +235,9 @@ if (str(ASSET)==''):
     asset_package = 'default'
 else:
     asset_package = str(ASSET)
+dirname = str(SubFolder)
+areaname = str(MainFolder)
+
 print (style.BCKBLUE)
 print ("***********************************************************************")
 print ("             X coordinat - Left / Right:", Cxl, " / ", Cxr)
@@ -241,6 +246,7 @@ print ("             Tile Size:", Size)
 print ("             Package to use:", asset_package)
 print ("***********************************************************************")
 print (style.RESET)
+
 
 # set OSM server
 OSMServer = ""
@@ -258,8 +264,8 @@ for Lon in Coord_X(Cxl, Cxr, Size):
         print(round(Lon, 3),round(Lat, 3))
         print(style.RESET)
         #pause()
-        GLBTileName = os.path.join(dirname, 'GLB', str(round(Lon, 3))+'_'+str(round(Lat, 3)))
-        JsonTileName = os.path.join(dirname, 'GLB', str(round(Lon, 3))+'_'+str(round(Lat, 3))+'.json')
+        GLBTileName = os.path.join(ParentFolder, 'Cesium3DTileset', areaname, dirname, 'GLB', str(round(Lon, 3))+'_'+str(round(Lat, 3)))
+        JsonTileName = os.path.join(ParentFolder, 'Cesium3DTileset', areaname, dirname, 'GLB', str(round(Lon, 3))+'_'+str(round(Lat, 3))+'.json')
         filePath = Path(GLBTileName+'.glb')
         fileJson = Path(JsonTileName)
         if filePath.is_file() and fileJson.is_file():
@@ -299,7 +305,7 @@ for Lon in Coord_X(Cxl, Cxr, Size):
             Cym = round((Lat - (Size/2)), 3)
             ### Convert the center coordinate from Geo to Cartesian 
             # Get the elevation of the center with DEM service elevation API
-            eleurl = "https://gis.4castdemo.com/dem/api/Terrain/GetLocationElevation"
+            eleurl = "https://gis.4cast-it.com/dem/api/Terrain/GetLocationElevation"
             position = {'x': Cxm, 'y': Cym}
             TileElevation = requests.get(url = eleurl, params = position, verify=False)
             Elevation = TileElevation.json()

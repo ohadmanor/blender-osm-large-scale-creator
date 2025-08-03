@@ -1,0 +1,4 @@
+Area_Name=Lebanon
+Assets=ISR_Buildings_2
+Res=0.1
+Lebanon=35.2,36.6,34.7,33.4
