@@ -18,10 +18,10 @@ to use this procedure you need to do the following:
 	3. gui\__init__.py - add responce to extewrnal script.
 	4. util\transverse_mercator.py - fix the building position accuracy around the glob (not localy tile) during export
 
-5 Create working enviroment
+5. Create working enviroment:
 	the stage can be done by script or manual to do tha following:
-	1. Install 3d-tiles-tools (https://github.com/CesiumGS/3d-tiles-tools) - this tool convert GLB files to 3DTiles (.b3dm)
-	2. Configure blsom in the blender
+		1. Install 3d-tiles-tools (https://github.com/CesiumGS/3d-tiles-tools) - this tool convert GLB files to 3DTiles (.b3dm)
+		2. Configure blsom in the blender
 	the script to do that is in the 3DTiles_Scripts - ENV_Install.bat
 
 6. Start to create you tiles:
