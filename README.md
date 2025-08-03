@@ -28,16 +28,16 @@ to use this procedure you need to do the following:
 	This script can create multiple areas of 3Dtiles with full indexing. do do that do the following:
 	1. Create text areas file:
 		in the Areas folder you need to create a file woth the following lines:
+			
 			Area_Name=<Name> - any text
 			Assets=<blosm_assets_name> - default
 			Res=<float> - this represent the size of the tile in decimal dgree. 0.1 is the recommanded size the represent 11 square km or 7 square miles.
 			<name_of_sub_area_1>=west,east,north,south
 			<name_of_sub_area_2>=west,east,north,south
-			.
-			.
-			.
-			
-			EX:
+			. . .
+	
+	    Example:
+        
 			Area_Name=Demo
 			Assets=default
 			Res=0.1
@@ -53,4 +53,3 @@ to use this procedure you need to do the following:
 		in the 3DTiles_Scripts run the 3DTiles.bat.
 		this script will read the Areas files and according to that will generate a 3DTiles sets fit to stream in ceasium.
 		in the end a new folder Cesium3DTileset will create and in it you will find an Area folders with the 3Dtiles.
-
